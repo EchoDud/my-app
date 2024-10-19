@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Shopping List</h1>
+
+  <div class="input-container">
+    <input [(ngModel)]="newItemName" placeholder="Add new item" />
+    <button (click)="addItem()">Add</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let item of items; let i = index">
+      <input type="checkbox" [(ngModel)]="item.bought" />
+      <span [class.bought]="item.bought">{{ item.name }}</span>
+      <button (click)="deleteItem(i)">Delete</button>
+    </li>
+  </ul>
+</div>
